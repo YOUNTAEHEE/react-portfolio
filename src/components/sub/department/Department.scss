@@ -1,0 +1,46 @@
+.Department {
+	.memberBox {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		h2 {
+			width: 20%;
+			font-size: 2rem;
+			font-weight: normal;
+			opacity: 0.8;
+		}
+		.con {
+			width: 75%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			border-left: 1px solid transparent;
+			border-image: radial-gradient(rgba(var(--baseColor-code), 0.3)90%, transparent) 1;
+			padding-left: 80px;
+
+			article {
+				width: 31%;
+				margin-bottom: 50px;
+
+				.pic {
+					width: 100%;
+					height: 300px;
+					margin-bottom: 10px;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				h3 {
+					font-weight: bold;
+					font-size: 1rem;
+					opacity: 0.8;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
