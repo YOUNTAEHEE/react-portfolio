@@ -1,14 +1,13 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
-export default function Header({ setDark, Dark }) {
-	// const themeBtn = () => {
-	// 	setDark(!Dark);
-	// };
+
+export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	return (
 		<header className='Header'>
 			<h1>
 				<Link to='/'>DCODELAB</Link>
 			</h1>
+
 			<ul>
 				<li>
 					<NavLink to='/department' activeClassName={'on'}>
@@ -41,9 +40,14 @@ export default function Header({ setDark, Dark }) {
 					</NavLink>
 				</li>
 			</ul>
+
 			<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
 				<div className='ball'></div>
 			</div>
+
+			<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
+				menu
+			</button>
 		</header>
 	);
 }
