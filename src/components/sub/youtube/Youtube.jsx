@@ -8,7 +8,6 @@ export default function Youtube() {
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
 	const [Vids, setVids] = useState([]);
-	console.log(Vids);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -31,7 +30,7 @@ export default function Youtube() {
 
 	return (
 		<Layout title={'Youtube'}>
-			{Vids.map((data, idx) => {
+			{Vids.map((data) => {
 				const [date, time] = data.snippet.publishedAt.split('T');
 
 				return (

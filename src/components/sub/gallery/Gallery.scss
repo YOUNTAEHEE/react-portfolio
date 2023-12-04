@@ -1,0 +1,108 @@
+.Gallery {
+	--gap: 20px;
+	--num: 4;
+
+	.controls {
+		margin-bottom: 20px;
+		.btnSet {
+			display: flex;
+			gap: 20px;
+
+			button {
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				padding: 7px 0px;
+				//border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
+				font-size: 1rem;
+				color: rgba(var(--baseColor-code), 0.4);
+				position: relative;
+				transition: 0.5s;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0%;
+					height: 1px;
+					background: var(--baseColor);
+					transition: 0.5s;
+				}
+
+				&.on {
+					color: rgba(var(--baseColor-code), 1);
+					&::after {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.frame {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+		justify-content: flex-start;
+
+		article {
+			width: calc((100% - var(--gap) * (var(--num) - 1)) / var(--num));
+			margin-bottom: 70px;
+			border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
+
+			.pic {
+				width: 100%;
+				margin-bottom: 10px;
+
+				img {
+					width: 100%;
+				}
+			}
+			h2 {
+				font-weight: normal;
+				font-size: 1rem;
+				line-height: 1.2;
+				margin-bottom: 10px;
+			}
+			.profile {
+				width: 100%;
+				display: flex;
+				align-items: flex-end;
+				gap: 10px;
+				margin-bottom: 20px;
+
+				img {
+					width: 40px;
+				}
+				span {
+					color: var(--pointColor);
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
+
+//laptop
+.laptop {
+	.Gallery {
+		--num: 3;
+	}
+}
+
+//tablet
+.tablet {
+	.Gallery {
+		--num: 2;
+	}
+}
+
+//mobile
+.mobile {
+	.Gallery {
+		--num: 1;
+	}
+}
