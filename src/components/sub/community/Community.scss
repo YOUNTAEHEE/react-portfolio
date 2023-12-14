@@ -16,10 +16,19 @@
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
 				padding: 5px 10px;
 				font-size: 1rem;
+				font-weight: normal;
 				color: var(--baseColor);
 				margin-bottom: 20px;
 				background-color: transparent;
 				resize: none;
+				font-family: var(--baseFont);
+
+				&::placeholder {
+					font-size: 1rem;
+					font-weight: normal;
+					color: var(--baseColor);
+					font-family: var(--baseFont);
+				}
 			}
 
 			nav {

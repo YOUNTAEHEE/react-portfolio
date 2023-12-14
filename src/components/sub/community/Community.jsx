@@ -4,13 +4,12 @@ import './Community.scss';
 import { ImCancelCircle } from 'react-icons/im';
 import { TfiWrite } from 'react-icons/tfi';
 import { useCustomText } from '../../../hooks/useText';
-
 export default function Community() {
 	const changeText = useCustomText('combined');
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		if (data) return JSON.parse(data);
-		else return [];
+		return JSON.parse(data);
+	
 	};
 	const [Post, setPost] = useState(getLocalData());
 	const refTit = useRef(null);
@@ -32,10 +31,7 @@ export default function Community() {
 			return alert('제목과 본문을 모두 입력하세요.');
 		}
 		const korTime = new Date().getTime() + 1000 * 60 * 60 * 9;
-		setPost([
-			{ title: refTit.current.value, content: refCon.current.value, date: new Date(korTime) },
-			...Post,
-		]);
+		setPost([{ title: refTit.current.value, content: refCon.current.value, date: new Date(korTime) }, ...Post]);
 		resetPost();
 	};
 
@@ -121,7 +117,9 @@ export default function Community() {
 				<div className='showBox'>
 					{Post.map((el, idx) => {
 						const date = JSON.stringify(el.date);
+						console.log('date', date);
 						const strDate = changeText(date.split('T')[0].slice(1), '.');
+						console.log('strDate', strDate);
 
 						if (el.enableUpdate) {
 							//수정모드
